@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+# Game of Life
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is an implementation of Conway's Game of Life using React, Redux, and TypeScript.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Game of Life is a cellular automaton devised by mathematician John Conway. It's a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. The game is played on a 2D grid of cells, where each cell can be in one of two states: alive or dead.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (version 14 or later recommended)
+- npm (comes with Node.js) or yarn
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Installation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone the repository:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```
+   git clone https://github.com/marcelomita/net-docs-challenge-marcelomita.git
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Navigate to the project directory:
+
+   ```
+   cd net-docs-challenge-marcelomita
+   ```
+
+3. Install the dependencies:
+   ```
+   npm install
+   ```
+   or
+   ```
+   yarn install
+   ```
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run dev` or `yarn dev`
+
+Runs the app in development mode.
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+### `npm run build` or `yarn build`
+
+Builds the app for production to the `dist` folder.
+
+### `npm run lint` or `yarn lint`
+
+Runs the linter to check for code style issues.
+
+### `npm run preview` or `yarn preview`
+
+Locally preview the production build.
+
+### `npm test` or `yarn test`
+
+Runs the test suite.
+
+### `npm run test:watch` or `yarn test:watch`
+
+Runs the test suite in watch mode.
+
+### `npm run test:coverage` or `yarn test:coverage`
+
+Runs the test suite and generates a coverage report.
+
+## Testing
+
+This project uses Vitest for unit testing. Test files are located in the `src/spec` directory. To run the tests, use the `npm test` or `yarn test` command.
+
+## Project Structure
+
+- `src/components`: React components
+- `src/store`: Redux store setup, slices, and selectors
+- `src/hooks`: Custom React hooks
+- `src/spec`: Test files
+
+## Test Coverage
+
+The last test coverage report is available in the `coverage` directory. And it shows a coverage of
+
+- 97.98% Statements
+- 94.05% Branches
+- 100% Functions
+- 97.98% Lines
+
+PS.: There are some files that are not being covered by the tests, like the styles, configuration files main.tsx. The complete list of excluded files can be found in the `vitest.config.ts` file.
+
+## License
+
+This project is licensed under the MIT License.

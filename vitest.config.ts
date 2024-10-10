@@ -8,5 +8,19 @@ export default defineConfig({
     globals: true,
     setupFiles: "./src/test/setup.ts",
     include: ["src/spec/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    coverage: {
+      provider: "v8",
+      reporter: ["text", "json", "html"],
+      exclude: [
+        "src/main.tsx",
+        "src/styles/*.ts",
+        "**/*.styles.ts",
+        "**/*.style.ts",
+        "**/*.d.ts",
+        "**/*.config.{js,ts}",
+        "node_modules/**",
+        "dist/**",
+      ],
+    },
   },
 });
